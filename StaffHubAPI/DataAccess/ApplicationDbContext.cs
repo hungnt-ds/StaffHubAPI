@@ -20,7 +20,6 @@ namespace StaffHubAPI.DataAccess
         public DbSet<ActualSalary> ActualSalaries { get; set; }
         public DbSet<AttachedFile> AttachedFiles { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
-        public DbSet<SalaryDetail> SalaryDetails { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -35,18 +34,18 @@ namespace StaffHubAPI.DataAccess
                     .WithMany(pc => pc.RoleClaims)
                     .HasForeignKey(c => c.ClaimId);
 
-            modelBuilder.Entity<SalaryDetail>()
-                    .HasKey(po => new { po.ActualSalaryId, po.SubmissionId });
-            modelBuilder.Entity<SalaryDetail>()
-                    .HasOne(p => p.ActualSalary)
-                    .WithMany(pc => pc.SalaryDetails)
-                    .HasForeignKey(p => p.ActualSalaryId)
-                    .OnDelete(DeleteBehavior.Restrict);
-            modelBuilder.Entity<SalaryDetail>()
-                    .HasOne(p => p.Submission)
-                    .WithMany(pc => pc.SalaryDetails)
-                    .HasForeignKey(c => c.SubmissionId)
-                    .OnDelete(DeleteBehavior.Restrict);
+            //modelBuilder.Entity<SalaryDetail>()
+            //        .HasKey(po => new { po.ActualSalaryId, po.SubmissionId });
+            //modelBuilder.Entity<SalaryDetail>()
+            //        .HasOne(p => p.ActualSalary)
+            //        .WithMany(pc => pc.SalaryDetails)
+            //        .HasForeignKey(p => p.ActualSalaryId)
+            //        .OnDelete(DeleteBehavior.Restrict);
+            //modelBuilder.Entity<SalaryDetail>()
+            //        .HasOne(p => p.Submission)
+            //        .WithMany(pc => pc.SalaryDetails)
+            //        .HasForeignKey(c => c.SubmissionId)
+            //        .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

@@ -6,8 +6,9 @@ namespace StaffHubAPI.Services.Interfaces
     public interface IUserService
     {
         ICollection<User> GetUsers();
+        ICollection<User> GetActiveUsers();
         User GetUser(int id);
-        User GetUser(string userName);
+        User GetUserByUserName(string userName);
         bool CreateUser(User user);
         bool UpdateUser(User user);
         bool DeleteUser(User user);

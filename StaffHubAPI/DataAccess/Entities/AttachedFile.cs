@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic.FileIO;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.VisualBasic.FileIO;
 
 namespace StaffHubAPI.DataAccess.Entities
 {
@@ -8,7 +9,9 @@ namespace StaffHubAPI.DataAccess.Entities
         public string FileName { get; set; }
         public byte[] FileData { get; set; }
 
-        public Submission Submission { get; set; }
+        [ForeignKey("SubmissionId")]
+        public virtual Submission Submission { get; set; }
+        public int SubmissionId { get; set; }
 
     }
 }

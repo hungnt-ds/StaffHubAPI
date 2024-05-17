@@ -1,5 +1,7 @@
-﻿using StaffHubAPI.DataAccess.Entities;
+﻿using AutoMapper;
+using StaffHubAPI.DataAccess.Entities;
 using StaffHubAPI.DataAccess.Repositories.Interface;
+using StaffHubAPI.DTOs;
 
 namespace StaffHubAPI.DataAccess.Repositories
 {
@@ -19,7 +21,7 @@ namespace StaffHubAPI.DataAccess.Repositories
 
         public User GetUser(int id)
         {
-            return _context.Users.FirstOrDefault(u => u.UserId == id);
+           return _context.Users.FirstOrDefault(u => u.UserId == id);
         }
 
         public bool UserExists(int userId)
@@ -55,7 +57,7 @@ namespace StaffHubAPI.DataAccess.Repositories
             throw new NotImplementedException();
         }
 
-        public User GetUserByUserName(string userName)
+        public User GetUser(string userName)
         {
             return _context.Users.FirstOrDefault(u => u.UserName == userName);
         }

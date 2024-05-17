@@ -12,7 +12,5 @@ namespace StaffHubAPI.Services.Interfaces
         void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt);
         void SetRefreshToken(User user, RefreshToken newRefreshToken);
         string GetUserName();
-        
-
     }
 }

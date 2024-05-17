@@ -46,8 +46,8 @@ namespace StaffHubAPI.Services.Implementations
             List<Claim> claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, user.UserName),
-                //new Claim(ClaimTypes.Role, "Admin"),
                 new Claim(ClaimTypes.Role, user.RoleId.ToString()),
+                new Claim("UserId", user.UserId.ToString())
             };
 
             var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(_configuration.GetSection("AppSettings:Token").Value));

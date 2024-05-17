@@ -24,7 +24,7 @@
   </ItemGroup>
 	
   <ItemGroup>
-    <Folder Include="FileDownloaded\" />
+    <Folder Include="FileDownloaded\" /> 
   </ItemGroup>
 
 </Project>

@@ -11,6 +11,7 @@ namespace StaffHubAPI.DataAccess.Entities
         public byte[] PasswordSalt { get; set; }
         public decimal ContractSalary { get; set; }
         public int DaysOff { get; set; }
+        public bool Status { get; set; }
         public string RefreshToken { get; set; } = string.Empty;
         public DateTime TokenCreated { get; set; }
         public DateTime TokenExpires { get; set; }
