@@ -1,7 +1,4 @@
-﻿using StaffHubAPI.DataAccess.Entities;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace StaffHubAPI.DTOs
+﻿namespace StaffHubAPI.DataAccess.DTOs
 {
     public class UserRegisterRequestDTO
     {

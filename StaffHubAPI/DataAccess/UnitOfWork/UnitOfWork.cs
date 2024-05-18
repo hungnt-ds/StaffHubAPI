@@ -1,5 +1,4 @@
-﻿using StaffHubAPI.DataAccess.Entities;
-using StaffHubAPI.DataAccess.Repositories;
+﻿using StaffHubAPI.DataAccess.Repositories;
 using StaffHubAPI.DataAccess.Repositories.Interface;
 
 namespace StaffHubAPI.DataAccess.UnitOfWork
@@ -29,7 +28,7 @@ namespace StaffHubAPI.DataAccess.UnitOfWork
             RoleClaimObj = new RoleClaimRepository(_db);
 
             //Eg Category = new CategoryRepository(_db);
-            
+
         }
 
         public void Save()

@@ -1,11 +1,10 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Security.Cryptography;
+using Microsoft.IdentityModel.Tokens;
 using StaffHubAPI.DataAccess.Entities;
 using StaffHubAPI.DataAccess.UnitOfWork;
 using StaffHubAPI.Services.Interfaces;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Security.Cryptography;
-using System.Text;
 using Claim = System.Security.Claims.Claim;
 
 namespace StaffHubAPI.Services.Implementations

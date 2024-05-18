@@ -27,7 +27,7 @@ namespace StaffHubAPI.Services.Implementations
             _unitOfWork.RoleClaimObj.AddClaimToRole(roleId, claimId);
         }
 
-        public void RemoveClaimFromRole(int roleId, int claimId) 
+        public void RemoveClaimFromRole(int roleId, int claimId)
         {
             var role = _unitOfWork.RoleObj.Get(roleId);
             if (role == null)
@@ -41,6 +41,16 @@ namespace StaffHubAPI.Services.Implementations
                 throw new ArgumentException($"Claim with ID {claimId} does not exist.");
             }
             _unitOfWork.RoleClaimObj.RemoveClaimFromRole(roleId, claimId);
+        }
+
+        public bool IsRoleUsed(int roleId)
+        {
+            return _unitOfWork.RoleClaimObj.IsRoleUsed(roleId);
+        }
+
+        public bool IsClamUsed(int claimId)
+        {
+            return _unitOfWork.RoleClaimObj.IsClaimUsed(claimId);
         }
     }
 }

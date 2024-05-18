@@ -1,7 +1,5 @@
 ﻿using StaffHubAPI.DataAccess.Entities;
-using StaffHubAPI.DataAccess.Repositories.Interface;
 using StaffHubAPI.DataAccess.UnitOfWork;
-using StaffHubAPI.DTOs;
 using StaffHubAPI.Services.Interfaces;
 
 namespace StaffHubAPI.Services.Implementations
@@ -17,7 +15,7 @@ namespace StaffHubAPI.Services.Implementations
 
         public ICollection<User> GetUsers()
         {
-            return _unitOfWork.UserObj.GetUsers(); 
+            return _unitOfWork.UserObj.GetUsers();
         }
 
         public ICollection<User> GetActiveUsers()

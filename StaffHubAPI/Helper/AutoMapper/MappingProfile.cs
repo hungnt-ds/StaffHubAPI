@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
+using StaffHubAPI.DataAccess.DTOs;
 using StaffHubAPI.DataAccess.Entities;
-using StaffHubAPI.DTOs;
 
 namespace StaffHubAPI.Helper.AutoMapper
 {
@@ -13,7 +13,6 @@ namespace StaffHubAPI.Helper.AutoMapper
             CreateMap<User, UserUpdateRequestDTO>()
                 .ReverseMap()
                 .ForAllMembers(opt => opt.Condition((src, dest, srcMember, destMember) => srcMember != null)); ;
-            //.ForMember(dest => dest.NameOfCaffe, opt => opt.MapFrom(src => src.Name));
             CreateMap<Claim, ClaimDTO>().ReverseMap();
             CreateMap<SubmissionDTO, Submission>();
             CreateMap<Submission, SubmissionDTO>();

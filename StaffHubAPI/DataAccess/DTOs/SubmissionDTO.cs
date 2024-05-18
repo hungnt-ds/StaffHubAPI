@@ -1,4 +1,4 @@
-﻿namespace StaffHubAPI.DTOs
+﻿namespace StaffHubAPI.DataAccess.DTOs
 {
     public class SubmissionDTO
     {

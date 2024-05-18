@@ -33,5 +33,23 @@ namespace StaffHubAPI.DataAccess.Repositories
                 _context.SaveChanges();
             }
         }
+
+        public bool IsClaimUsed(int claimId)
+        {
+            if (_context.RoleClaims.Any(c => c.ClaimId == claimId))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool IsRoleUsed(int roleId)
+        {
+            if (_context.RoleClaims.Any(c => c.RoleId == roleId))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using StaffHubAPI.DataAccess.DTOs;
 using StaffHubAPI.DataAccess.Entities;
-using StaffHubAPI.DTOs;
-using UploadFileAPI.Models;
 
 namespace StaffHubAPI.Services.Interfaces
 {

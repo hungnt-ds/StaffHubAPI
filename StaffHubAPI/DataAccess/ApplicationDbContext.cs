@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StaffHubAPI.DataAccess.Entities;
-using UploadFileAPI.Models;
 
 namespace StaffHubAPI.DataAccess
 {

@@ -1,5 +1,4 @@
-﻿using System.Security.Claims;
-using StaffHubAPI.DataAccess.Entities;
+﻿using StaffHubAPI.DataAccess.Entities;
 
 namespace StaffHubAPI.Services.Interfaces
 {

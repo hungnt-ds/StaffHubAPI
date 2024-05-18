@@ -1,6 +1,5 @@
 ﻿using StaffHubAPI.DataAccess.Entities;
 using StaffHubAPI.DataAccess.Repositories.Interface;
-using StaffHubAPI.Services.Interfaces;
 
 namespace StaffHubAPI.DataAccess.Repositories
 {

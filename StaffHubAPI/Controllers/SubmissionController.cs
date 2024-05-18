@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using StaffHubAPI.DataAccess.UnitOfWork;
-using StaffHubAPI.DTOs;
+using StaffHubAPI.DataAccess.DTOs;
 using StaffHubAPI.Helper.Attributes;
 using StaffHubAPI.Helper.Constants;
 using StaffHubAPI.Services.Interfaces;
@@ -73,10 +72,9 @@ namespace StaffHubAPI.Controllers
 
                         salaryUser.SalaryAfterDeductions = salaryUser.ContractSalary - deductionAmount;
                         _userService.UpdateUser(user);
+                        _submissionService.UpdateSubmission(submission);
                     }
                 }
-
-                _submissionService.UpdateSubmission(submission);
 
                 return Ok();
             }
@@ -97,11 +95,11 @@ namespace StaffHubAPI.Controllers
             try
             {
                 _attachedFileService.DownloadFileById(id);
-                return Ok("File download successful!"); 
+                return Ok("File download successful!");
             }
             catch (FileNotFoundException ex)
             {
-                return NotFound(ex.Message); 
+                return NotFound(ex.Message);
             }
             catch (Exception ex)
             {

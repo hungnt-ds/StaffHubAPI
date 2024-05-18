@@ -1,5 +1,4 @@
 ﻿using StaffHubAPI.DataAccess.Entities;
-using StaffHubAPI.DTOs;
 
 namespace StaffHubAPI.Services.Interfaces
 {

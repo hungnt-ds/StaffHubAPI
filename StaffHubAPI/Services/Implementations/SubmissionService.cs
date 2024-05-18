@@ -1,10 +1,9 @@
 ﻿using AutoMapper;
+using StaffHubAPI.DataAccess.DTOs;
 using StaffHubAPI.DataAccess.Entities;
 using StaffHubAPI.DataAccess.Repositories.Interface;
 using StaffHubAPI.DataAccess.UnitOfWork;
-using StaffHubAPI.DTOs;
 using StaffHubAPI.Services.Interfaces;
-using UploadFileAPI.Models;
 
 namespace StaffHubAPI.Services.Implementations
 {
@@ -15,8 +14,8 @@ namespace StaffHubAPI.Services.Implementations
         private readonly IMapper _mapper;
 
         public SubmissionService(
-            IUnitOfWork unitOfWork, 
-            IAttachedFileRepository attachedFileRepository, 
+            IUnitOfWork unitOfWork,
+            IAttachedFileRepository attachedFileRepository,
             IMapper mapper)
         {
             _unitOfWork = unitOfWork;
@@ -29,7 +28,7 @@ namespace StaffHubAPI.Services.Implementations
             try
             {
                 // Mapper here
-                var submission = _mapper.Map<Submission>(dto); 
+                var submission = _mapper.Map<Submission>(dto);
                 submission.UserId = userId;
                 submission.SendDate = DateTime.Now;
                 submission.Status = false;
@@ -40,7 +39,7 @@ namespace StaffHubAPI.Services.Implementations
                 var attachedFile = new AttachedFile()
                 {
                     FileName = fileData.FileName,
-                    SubmissionId = submission.SubmissionId 
+                    SubmissionId = submission.SubmissionId
                 };
 
                 using (var stream = new MemoryStream())
@@ -52,7 +51,7 @@ namespace StaffHubAPI.Services.Implementations
                 _attachedFileRepository.CreateAttachedFile(attachedFile);
                 _attachedFileRepository.Save();
 
-                return submission; 
+                return submission;
             }
             catch (Exception)
             {

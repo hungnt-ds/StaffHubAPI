@@ -1,13 +1,9 @@
 ﻿using System.Security.Claims;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using StaffHubAPI.DataAccess.DTOs;
 using StaffHubAPI.DataAccess.Entities;
-using StaffHubAPI.DataAccess.UnitOfWork;
-using StaffHubAPI.DTOs;
-using StaffHubAPI.Helper.Attributes;
 using StaffHubAPI.Helper.Constants;
 using StaffHubAPI.Services.Interfaces;
 
@@ -47,7 +43,7 @@ namespace StaffHubAPI.Controllers
         public IActionResult GetUser(int id)
         {
             var currentUserId = int.Parse(User.FindFirstValue("UserId"));
-            if(currentUserId != id)
+            if (currentUserId != id)
             {
                 return Unauthorized("Access denied: You can only view your own information.");
             }
@@ -76,7 +72,7 @@ namespace StaffHubAPI.Controllers
 
             _userService.UpdateUser(existingUser);
 
-            return NoContent(); 
+            return NoContent();
         }
 
     }

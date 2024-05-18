@@ -16,7 +16,7 @@ namespace StaffHubAPI.DataAccess.Entities
         public DateTime TokenCreated { get; set; }
         public DateTime TokenExpires { get; set; }
 
-        [ForeignKey("RoleId")] 
+        [ForeignKey("RoleId")]
         public virtual Role Role { get; set; }
         public int RoleId { get; set; }
 

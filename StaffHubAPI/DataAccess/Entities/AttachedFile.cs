@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.VisualBasic.FileIO;
 
 namespace StaffHubAPI.DataAccess.Entities
 {

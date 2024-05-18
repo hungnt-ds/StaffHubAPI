@@ -1,8 +1,9 @@
-﻿using AutoMapper;
+﻿using System.Net;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using StaffHubAPI.DataAccess.DTOs;
 using StaffHubAPI.DataAccess.Entities;
-using StaffHubAPI.DTOs;
 using StaffHubAPI.Helper.Attributes;
 using StaffHubAPI.Helper.Constants;
 using StaffHubAPI.Services.Interfaces;
@@ -14,12 +15,14 @@ namespace StaffHubAPI.Controllers
     public class ClaimController : ControllerBase
     {
         private readonly IClaimService _claimService;
+        private readonly IRoleClaimService _roleClaimService;
         private readonly IMapper _mapper;
 
-        public ClaimController(IClaimService claimService, IMapper mapper)
+        public ClaimController(IClaimService claimService, IRoleClaimService roleClaimService, IMapper mapper)
         {
             _claimService = claimService;
-            this._mapper = mapper;
+            _roleClaimService = roleClaimService;
+            _mapper = mapper;
         }
 
         [HttpGet("get-all-claims")]
@@ -62,12 +65,16 @@ namespace StaffHubAPI.Controllers
         public IActionResult DeleteClaim(int id)
         {
             var existClaim = _claimService.GetClaim(id);
+            if (_roleClaimService.IsClamUsed(existClaim.ClaimId))
+            {
+                return BadRequest("Claim is used cannot be remove");
+            }
             if (existClaim == null)
             {
                 return BadRequest("Claim does not exist");
             }
 
             return Ok(_claimService.RemoveClaim(existClaim));
-        }
+        }        
     }
 }

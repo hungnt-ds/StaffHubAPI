@@ -1,13 +1,8 @@
-﻿using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
+using StaffHubAPI.DataAccess.DTOs;
 using StaffHubAPI.DataAccess.Entities;
-using StaffHubAPI.DataAccess.UnitOfWork;
-using StaffHubAPI.DTOs;
 using StaffHubAPI.Services.Interfaces;
 
 namespace StaffHubAPI.Controllers
@@ -22,9 +17,9 @@ namespace StaffHubAPI.Controllers
         private readonly IActualSalaryService _actualSalaryService;
 
         public AuthController(
-            IAuthenticationService authenticationService, 
-            IUserService userService, 
-            IMapper mapper, 
+            IAuthenticationService authenticationService,
+            IUserService userService,
+            IMapper mapper,
             IActualSalaryService actualSalaryService)
         {
             _authenticationService = authenticationService;

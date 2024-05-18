@@ -1,6 +1,5 @@
-﻿using StaffHubAPI.DataAccess;
-using StaffHubAPI.Services.Implementations;
-using System.Security.Claims;
+﻿using System.Security.Claims;
+using StaffHubAPI.DataAccess;
 
 namespace StaffHubAPI.Helper.Middleware
 {

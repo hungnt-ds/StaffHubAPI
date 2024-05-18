@@ -7,7 +7,8 @@ namespace StaffHubAPI.DataAccess.Repositories
     {
         private readonly ApplicationDbContext _context;
 
-        public ActualSalaryRepository(ApplicationDbContext context) {
+        public ActualSalaryRepository(ApplicationDbContext context)
+        {
             this._context = context;
         }
         public bool ActualSalaryExists(int actualSalaryId)

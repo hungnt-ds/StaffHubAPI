@@ -1,7 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using StaffHubAPI.DataAccess.Entities;
+﻿using StaffHubAPI.DataAccess.Entities;
 using StaffHubAPI.DataAccess.Repositories.Interface;
-using StaffHubAPI.DataAccess.UnitOfWork;
 
 namespace StaffHubAPI.DataAccess.Repositories
 {
