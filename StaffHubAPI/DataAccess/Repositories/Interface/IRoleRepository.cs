@@ -6,5 +6,7 @@ namespace StaffHubAPI.DataAccess.Repositories.Interface
     {
         Role? Get(int roleId);
         IEnumerable<Role> GetAll();
+        Task AddAsync(Role role);
+        Task AddRangeAsync(IEnumerable<Role> roles);
     }
 }
