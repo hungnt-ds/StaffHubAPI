@@ -26,9 +26,6 @@ namespace StaffHubAPI.DataAccess.UnitOfWork
             ClaimObj = new ClaimRepository(_db);
             RoleObj = new RoleRepository(_db);
             RoleClaimObj = new RoleClaimRepository(_db);
-
-            //Eg Category = new CategoryRepository(_db);
-
         }
 
         public void Save()
