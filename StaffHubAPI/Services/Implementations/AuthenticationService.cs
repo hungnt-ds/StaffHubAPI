@@ -23,9 +23,9 @@ namespace StaffHubAPI.Services.Implementations
             _key = configuration["Jwt:Key"];
             _issuer = configuration["Jwt:Issuer"];
             _refreshTokenKey = configuration["Jwt:RefreshTokenKey"];
-            this._configuration = configuration;
-            this._httpContextAccessor = httpContextAccessor;
-            this._unitOfWork = unitOfWork;
+            _configuration = configuration;
+            _httpContextAccessor = httpContextAccessor;
+            _unitOfWork = unitOfWork;
         }
 
         public RefreshToken GenerateRefreshToken()
